@@ -1,11 +1,16 @@
 import React from 'react';
 
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
+
 import { download } from '../assets';
 import { downloadImage } from '../utils';
 
 const Card = ({ _id, name, prompt, photo }) => (
   <div className="rounded-xl group relative shadow-card hover:shadow-cardhover card">
-    <img
+    <LazyLoadImage
+    loading='lazy'
+    effect='blur'
       className="w-full h-auto object-cover rounded-xl"
       src={photo}
       alt={prompt}
